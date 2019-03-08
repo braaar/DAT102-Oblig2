@@ -1,5 +1,6 @@
 package no.hvl.dat102.mengde.hobby;
 import no.hvl.dat102.mengde.kjedet.*;
+
 import java.util.*;
 
 public class Medlem {
@@ -18,9 +19,10 @@ public class Medlem {
 		statusindeks = -1;
 	}
 	
-	public Medlem(String navn, int statusindeks) {
+	public Medlem(String navn, KjedetMengde<Hobby> hobbyer) {
 		this.navn = navn;
-		this.statusindeks = statusindeks;
+		this.hobbyer = hobbyer;
+		statusindeks = -1;
 	}
 
 	public String getNavn() {
@@ -41,6 +43,18 @@ public class Medlem {
 
 	public int getStatusindeks() {
 		return statusindeks;
+	}
+	
+	public String toString() {
+		String svar = "<";
+		Iterator<Hobby> leser = hobbyer.oppramser();
+		int teller = 0;
+		while(leser.hasNext() && teller<(hobbyer.antall()-1)) {
+			svar = svar + leser.next().getHobbyNavn() + ", ";
+			teller++;
+		}
+		svar = svar + leser.next() + ">";
+		return svar;
 	}
 
 	public void setStatusindeks(int statusindeks) {

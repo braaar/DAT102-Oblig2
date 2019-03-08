@@ -12,7 +12,7 @@ public class Hobby {
 		return hobbyNavn;
 	}
 	public String toString() {
-		String svar = ("<" + this.hobbyNavn + ">");
+		String svar = (this.hobbyNavn);
 		return svar;
 	}
 	
