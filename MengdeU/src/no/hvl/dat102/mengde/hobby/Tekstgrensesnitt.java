@@ -1,26 +1,27 @@
 package no.hvl.dat102.mengde.hobby;
-import java.util.*;
 import java.util.Scanner;
 import no.hvl.dat102.mengde.kjedet.*;
 
 public class Tekstgrensesnitt {
+	private static Scanner info = KlientDatakontakt.info;
 	public static Medlem lesMedlem() {
 		String navn;
 		Hobby temp;
 		KjedetMengde<Hobby> hobbyer = new KjedetMengde<Hobby> ();
 		int antall;
-		Scanner leser = new Scanner(System.in);
 		System.out.println("Skriv navnet til medlemmet :");
-		navn = leser.nextLine();
+		navn = info.nextLine();
 		System.out.println("Skriv inn hvor mange hobbyer du har lyst å gi medlemmet:");
-		antall = Integer.parseInt(leser.nextLine());
+		antall = Integer.parseInt(info.nextLine());
+		if (antall < 1) {
+			antall = 1;
+		}
 		for(int i = 0; i < antall; i++) {
 			System.out.println("Skriv inn navnet på hobbyen:");
-			temp = new Hobby(leser.nextLine());
+			temp = new Hobby(info.nextLine());
 			hobbyer.leggTil(temp);
 		}
 		Medlem pers = new Medlem(navn,hobbyer);
-		leser.close();
 		return pers;
 	}
 	
