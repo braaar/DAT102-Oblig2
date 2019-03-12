@@ -10,6 +10,10 @@ public class Datakontakt {
 		medlemer = new Medlem[20];
 	}
 	
+	public Medlem getMedlem(int plass) {
+		return medlemer[plass];
+	}
+	
 	public int getAntallMedlemer() {
 		return antallMedlemer;
 	}
