@@ -21,15 +21,37 @@ public class TabellOrdnetListe<T extends Comparable<T>> implements OrdnetListeAD
 	@Override
 	public T fjernSiste() {
 		T resultat = null;
-
-		//... Fyll ut
+		
+		//Hvis bak == 0 trenger vi ikke å gjøre noe
+		if(bak !=0 ) {
+		  resultat = liste[bak-1];
+		  liste[bak-1] = null;
+		  bak--;
+		}
+		
 		return resultat;
 	}
 
 	@Override
 	public T fjernFoerste() {
 		T resultat = null;
-		//... Fyll ut
+	
+		//Hvis bak == 0 trenger vi ikke å gjøre noe
+		
+		if (bak == 1) {
+		  resultat = siste();
+		  liste[0] = null;
+		  bak = 0;
+		}
+		else if (bak > 1){
+		  resultat = liste[0];
+      for(int i = 0; i < bak-1; i++) {
+      liste[i] = liste[i+1];
+      }
+      liste[bak-1] = null;
+      bak--;
+    }
+		
 		return resultat;
 	}
 
@@ -60,10 +82,13 @@ public class TabellOrdnetListe<T extends Comparable<T>> implements OrdnetListeAD
 		return bak;
 	}
 	
-    @Override
+  @Override
 	public void leggTil(T element) {
-    	   	
-		//...Fyll ut
+    if(bak == liste.length) {
+      utvid();
+    }
+    liste[bak] = element;
+    bak++;
 	}
 
 	
@@ -81,7 +106,13 @@ public class TabellOrdnetListe<T extends Comparable<T>> implements OrdnetListeAD
 
 	private int finn(T el) {
 		int i = 0, resultat = IKKE_FUNNET;
-		//...Fyll ut
+
+		do {
+		  if(liste[i].equals(el)) {
+        resultat = i;         
+      }
+		  i++;
+		} while (resultat == IKKE_FUNNET && i < bak);
 		return resultat;
 	}
 
