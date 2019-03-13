@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="BalanseringU/src"/>
+	<classpathentry kind="src" path="Koe/src"/>
+	<classpathentry kind="src" path="ListeOrdnetU/src"/>
+	<classpathentry kind="src" path="ListeOrdnetU/TestOrdnetListe"/>
+	<classpathentry kind="src" path="MengdeU/src"/>
+	<classpathentry kind="src" path="SorteringOgSoekingFyllUt/src"/>
+	<classpathentry kind="output" path="BalanseringU/bin"/>
+</classpath>
