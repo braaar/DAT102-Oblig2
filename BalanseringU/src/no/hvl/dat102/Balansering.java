@@ -3,13 +3,13 @@ package no.hvl.dat102;
 import java.io.*;
 
 public class Balansering {
-	// Her opphever du kommentarsetning når du har fått lagt inn
-	// nødvendig kode
+	// Her opphever du kommentarsetning nï¿½r du har fï¿½tt lagt inn
+	// nï¿½dvendig kode
 	// SirkulaerStabel<Parentesinfo>stabel = new
 	// SirkulaerStabel<Parentesinfo>();
 
-	private boolean passer(char åpent, char lukket) {
-		switch (åpent) {
+	private boolean passer(char aapent, char lukket) {
+		switch (aapent) {
 		case '(':
 			return (lukket == ')');
 		case '[':
