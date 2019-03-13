@@ -12,6 +12,6 @@ public static void main(String[] args) {
     System.out.println(intPar];
     int maksHeltall = intPar.maks();
     System.out.printf("stoerste %d%n",maksHeltall);      
-  }(
-}
+  }
+}(
 

@@ -9,14 +9,14 @@ public interface StabelADT<T> {
 //****************************************************************
 */
   /**
-   * Legger til et element pï¿½ toppen av stabelen, utvider hvis behov
- * @param element generisk element som stables pï¿½
+   * Legger til et element på toppen av stabelen, utvider hvis behov
+ * @param element generisk element som stables på
  */
 public void push (T element);
   
 
 /**
- * Fjerner et element pï¿½ toppen av stabelen og returnerer referansen
+ * Fjerner et element på toppen av stabelen og returnerer referansen
  * Kaster unntak EmptyCollectionException hvis stabelen allerde er tom.
  * @return T element fjernes fra toppen av stabelen
  * 
@@ -25,10 +25,10 @@ public T pop();
 
  
 /**
- * Returnerer referansen til elementet pï¿½ toppen av stabelen.
+ * Returnerer referansen til elementet på toppen av stabelen.
  * Elementet blir ikke fjernet.
  * Kaster unntaket EmptyCollectionException hvis stabelen allerde er tom.
- * @return T element pï¿½ toppen av stabelen.
+ * @return T element på toppen av stabelen.
  * 
  */
 public T peek();
@@ -43,8 +43,8 @@ public boolean erTom();
 
 
   /**
-   * Returnerer antall elementer pï¿½ stabelen.
- * @return antall elementer pï¿½ stabelen
+   * Returnerer antall elementer på stabelen.
+ * @return antall elementer på stabelen
  */
 public int antall();
   
